@@ -224,9 +224,9 @@ survfitKM <- function(x, y, weights=rep(1.0,length(x)),
                       n.event= unlist(lapply(cfit, function(x) x$n[,5])),
                       n.censor=unlist(lapply(cfit, function(x) x$n[,6])),
                       surv =   unlist(lapply(cfit, function(x) x$estimate[,1])),
-                      std.err =unlist(lapply(cfit, function(x) x$std[,1])),
+                      std.err =unlist(lapply(cfit, function(x) x$std.err[,1])),
                       cumhaz  =unlist(lapply(cfit, function(x) x$estimate[,2])),
-                      std.chaz=unlist(lapply(cfit, function(x) x$std[,2])),
+                      std.chaz=unlist(lapply(cfit, function(x) x$std.err[,2])),
                       strata=strata)
           if (ny==3) rval$n.enter <- unlist(lapply(cfit, function(x) x$n[,8]))
     }
